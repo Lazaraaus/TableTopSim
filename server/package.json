@@ -1,0 +1,18 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Server for table-top simulator",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "nodemon server.js" 
+  },
+  "author": "Lazaraaus",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.12",
+    "nodemon": "^2.0.7",
+    "socket.io": "^4.1.2"
+  }
+}
