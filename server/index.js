@@ -14,6 +14,23 @@ io.on('connection', (socket) => {
 
     players.push(socket.id);
 
+    // Assign 1st Player
+    if (players.length === 1) {
+        console.log(`{socket.id} is player A`)
+        io.emit('isPlayerA');
+    }
+
+    // Emit Card Deal event to clients
+    socket.on('dealCards', function () {
+        io.emit('dealCards');
+    });
+
+    // Emit Card Played Event to clients
+    socket.on('cardPlayed', function(gameObject, isPlayerA){
+        io.emit('cardPlayed', gameObject, isPlayerA);
+    });
+
+
     // Send chat message
     socket.on('send', (text) => {
         // Package text to emit to all clients
